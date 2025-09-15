@@ -1,0 +1,35 @@
+@startuml DiagramaProyecto
+
+class Persona{
+    -nombre: str
+    -apellido: str
+    -dni: int
+
+}
+
+class Cliente{
+    -id_cliente: int 
+    -reservas_realizadas: int 
+}
+
+class Reserva{
+    -fecha: date
+    -hora: time
+    -disponible: bool
+    -cancha: int 
+}
+
+class Gestion_Reservas{
+    +Reserva: list
+    +Cliente: list
+
+    reservar()
+    ver_disponibilidad()
+    añadir_cliente()
+}
+
+
+Persona <|-- Cliente
+
+
+@enduml
